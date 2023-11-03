@@ -27,7 +27,7 @@ public class Main {
             json_root.vulnerabilities.removeFirst();
         }
 
-        /*
+
 
         // you can test your code by this
 
@@ -35,12 +35,12 @@ public class Main {
         CVE[] quick_array = Arrays.copyOfRange(cves, 0, cves.length);
 
         // sort the copy array
-        QuickSort.sort(quick_array);
+        MergeSort.sort(quick_array);
 
         // print out the sorted array
         System.out.println(Arrays.toString(quick_array));
 
-         */
+
 
     }
 
