@@ -2,7 +2,7 @@ import java.lang.Math;
 import java.util.Arrays;
 
 
-public class ArayTest {
+public class ArrayTest {
 
 	public static void main(String[] args) {
 
