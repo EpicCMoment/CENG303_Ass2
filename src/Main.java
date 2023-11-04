@@ -1,11 +1,8 @@
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
 
@@ -29,16 +26,16 @@ public class Main {
 
 
 
-        // you can test your code by this
+        // you can test your code as followed
 
-        // createa a copy of the original array
-        CVE[] quick_array = Arrays.copyOfRange(cves, 0, cves.length);
+        // creates a copy of the original array
+        //CVE[] quick_array = Arrays.copyOfRange(cves, 0, cves.length);
 
         // sort the copy array
-        MergeSort.sort(quick_array);
+        //MergeSort.sort(quick_array);
 
         // print out the sorted array
-        System.out.println(Arrays.toString(quick_array));
+        //System.out.println(Arrays.toString(quick_array));
 
 
 

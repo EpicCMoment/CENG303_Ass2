@@ -13,11 +13,12 @@ public class ArrayTest {
 			arr[i] = (int)(Math.random() * 1000);
 
 		}
-		MergeSort.sort(arr);
+
+		// run your sorting algorithm here
+		//MergeSort.sort(arr);
+
+
 		System.out.println(Arrays.toString(arr));
-
-
-
 
 	}
 
