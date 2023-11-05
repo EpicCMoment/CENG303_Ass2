@@ -41,7 +41,7 @@ public class AVLTreeSort {
 
         inOrderTraversal(root, sortedList);
 
-        for (int i = 0; i < arr.length; i++) {
+      for (int i = 0; i < arr.length && i < sortedList.size(); i++) {
             arr[i] = sortedList.get(i);
         }
     }
