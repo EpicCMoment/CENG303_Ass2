@@ -18,10 +18,11 @@ class AVLNode<E> {
     AVLNode<E> left;
     AVLNode<E> right;
     int height;
-
+    int count;
     AVLNode(E data) {
         this.data = data;
         this.height = 1;
+        this.count = 1;
     }
 }
 
@@ -51,13 +52,14 @@ public class AVLTreeSort {
             return new AVLNode<>(data);
         }
 
-        if (data.compareTo(node.data) < 0) {
+        if (data.compareTo(node.data) == 0) {
+            node.count++;
+        } else if (data.compareTo(node.data) < 0) {
             node.left = insert(node.left, data);
-        } else if (data.compareTo(node.data) > 0) {
-            node.right = insert(node.right, data);
         } else {
-            return node; // Duplicate data is not allowed
+            node.right = insert(node.right, data);
         }
+
 
         node.height = 1 + Math.max(getHeight(node.left), getHeight(node.right));
 
@@ -83,6 +85,7 @@ public class AVLTreeSort {
 
         return node;
     }
+
 
     private static <E> int getHeight(AVLNode<E> node) {
         if (node == null) {
@@ -127,8 +130,11 @@ public class AVLTreeSort {
     private static <E extends Comparable<E>> void inOrderTraversal(AVLNode<E> node, List<E> sortedList) {
         if (node != null) {
             inOrderTraversal(node.left, sortedList);
-            sortedList.add(node.data);
+            for (int i = 0; i < node.count; i++) {
+                sortedList.add(node.data);
+            }
             inOrderTraversal(node.right, sortedList);
         }
     }
+
 }
