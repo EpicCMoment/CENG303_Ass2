@@ -6,6 +6,14 @@ public class ArrayTest {
 
 	public static void main(String[] args) {
 
+		for (int i = 0; i < 1000; i++) {
+			System.out.println(runTest());
+		}
+
+
+	}
+
+	private static int runTest() {
 		Integer[] arr = new Integer[20];
 
 		for (int i = 0; i < 20; i++) {
@@ -15,10 +23,21 @@ public class ArrayTest {
 		}
 
 		// run your sorting algorithm here
-		//MergeSort.sort(arr);
+		Integer[] dummy_arr = Arrays.copyOfRange(arr, 0, arr.length);
+		Integer[] dummy_arr2 = Arrays.copyOfRange(arr, 0, arr.length);
 
+		AVLTreeSort.sort(dummy_arr);
+		Arrays.sort(dummy_arr2);
 
-		System.out.println(Arrays.toString(arr));
+		int compare_result = Arrays.compare(dummy_arr2, dummy_arr);
+
+		if (compare_result != 0) {
+			System.out.println("Sorted array:" + Arrays.toString(dummy_arr));
+			System.out.println("Original array:" + Arrays.toString(arr));
+		}
+
+		return compare_result;
+
 
 	}
 
